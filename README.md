@@ -1,10 +1,10 @@
-## name of project
+## World Traveler
 ### Code Badges
 [![Build Status](https://travis-ci.org/mfbadr/world-traveler.svg)](https://travis-ci.org/mfbadr/world-traveler)
 [![Coverage Status](https://coveralls.io/repos/mfbadr/world-traveler/badge.png)](https://coveralls.io/r/mfbadr/world-traveler)
 
 ### About
-write a description about your project
+Mark where you've been with pictures. Made with Less CSS, and other fancy things
 
 ### Models
 ```
