@@ -1,0 +1,28 @@
+extends ../shared/template
+block content
+  .row
+    .col-xs-12
+      #map
+  .row
+    .col-xs-12
+      table.table.table-striped.table-hover
+        thead
+          tr
+            th Name
+            th Start
+            th End
+            th Latitude
+            th Longitude
+        tbody
+          each vacation in vacations
+            tr
+              td= vacation.name
+              td= moment(vacation.start).format("MMM Do, YYYY")
+              td= moment(vacation.end).format("MMM Do, YYYY")
+              td= vacation.lat.toFixed(8)
+              td= vacation.lng.toFixed(8)
+       
+
+block scripts
+  script(src='/js/user/vacaIndex.js')
+
