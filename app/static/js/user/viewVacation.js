@@ -5,16 +5,14 @@
   var map;
 
   $(document).ready(function(){
-    initMap(0, 0, 2);
-    var positions = getPositions();
-    positions.forEach(function(pos){
-      addMarker(pos.lat, pos.lng, pos.name);
-    });
+    var pos = getPosition();
+    initMap(pos.lat, pos.lng, 4);
+    addMarker(pos.lat, pos.lng, pos.name);
   });
 
   function addMarker(lat, lng, name){
     var latLng = new google.maps.LatLng(lat, lng);
-    new google.maps.Marker({map: map, position: latLng, title: name, animation:google.maps.Animation.DROP, icon:'/img/flag.png'});
+    new google.maps.Marker({map: map, position: latLng, title: name, animation:google.maps.Animation.DROP});
   }
 
   function initMap(lat, lng, zoom){
@@ -23,15 +21,14 @@
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
   }
 
-  function getPositions(){
-    var objects = $('table tbody tr').toArray().map(function(tr){ //turn our array of tr into objects
-      var name = $(tr).attr('data-name'),
-           lat = $(tr).attr('data-lat'),
-           lng = $(tr).attr('data-lng'),
-           obj = {name:name, lat:parseFloat(lat), lng:parseFloat(lng)};
-      return obj;
-    });
-    return objects;
+  function getPosition(){
+    //debugger;
+    var name = $('#vaca').attr('data-name'),
+         lat = $('#vaca').attr('data-lat'),
+         lng = $('#vaca').attr('data-lng'),
+         obj = {name:name, lat:parseFloat(lat), lng:parseFloat(lng)};
+    console.log(obj);
+    return obj;
   }
 
 })();

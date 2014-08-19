@@ -33,14 +33,21 @@ describe('vacation', function(){
       expect(v.lng).to.be.a('number');
       expect(v.start).to.respondTo('getDay');
       expect(v.end).to.respondTo('getDay');
-
     });
   });
-
   describe('.all', function(){
     it('should get all vacations', function(done){
       Vacation.all(function(err, people){
         expect(people).to.have.length(3);
+        done();
+      });
+    });
+  });
+  describe('.findById', function(){
+    it('should return a single function', function(done){
+      Vacation.findById('000000000000000000000001', function(v){
+        expect(v).to.be.instanceOf(Vacation);
+        expect(v.name).to.equal('Paris, France');
         done();
       });
     });
