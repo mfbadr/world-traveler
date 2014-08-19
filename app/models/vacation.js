@@ -50,9 +50,9 @@ Vacation.prototype.downloadPhoto = function(url, cb){
 Vacation.prototype.uploadPhotos = function(files, cb){
   var dir   = __dirname + '/../static/img/' + this._id,
       self  = this,
-      exist = fs.existsSync(dir);
+      exist = fs.existsSync(dir); //true if the directory already exists
   if(!exist){
-    fs.mkdirSync(dir);
+    fs.mkdirSync(dir); //Nodes way of making a file, uses the fs module
   }
 
   files.photos.forEach(function(photo){
