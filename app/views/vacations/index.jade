@@ -15,7 +15,7 @@ block content
             th Longitude
         tbody
           each vacation in vacations
-            tr
+            tr(data-name=vacation.name, data-lat=vacation.lat, data-lng=vacation.lng)
               td= vacation.name
               td= moment(vacation.start).format("MMM Do, YYYY")
               td= moment(vacation.end).format("MMM Do, YYYY")
