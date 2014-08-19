@@ -18,7 +18,7 @@
     }
   }
 
-  function geocode(address) {
+  function geocode(address){
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({address: address}, function(results, status){
       var name = results[0].formatted_address,
